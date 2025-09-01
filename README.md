@@ -14,8 +14,11 @@ Voici les différentes choses à améliorer dans ce projet :
 - Partie de la simulation de la batterie, à modifier lorsque j'aurais la batterie pour récupérer la valeur de celle-ci
 
 - Faire en sorte de vérifier le bonne connexion au mqtt de l'esp32-cam.
+  
         -> Envoyer un message sur un topic lorsqu'il se connecte afin que le raspberry puisse voir qu'il est connecté.
+  
                 -> Durant l'envoie de l'image, faire en sorte que le raspberry envoi un callback par mqtt quand il reçoit l'image pour que l'esp32-cam sache qu'elle est bien arrivée (lecture de l'esp32-cam sur le mqtt aussi)
+  
                       -> Si pas reçu de callback au bout de x temps, renvoyer etc
   
 - Modifier la partie du HTML car mal placé
