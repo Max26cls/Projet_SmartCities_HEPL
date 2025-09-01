@@ -4,6 +4,7 @@ Ce projet a pour objectif de créer un nicoir connecté à l'aide d'un raspberry
 Voici donc les différents codes réaliser et mis en place pour le bon fonctionnement du projet.
 
 Le code "envoi_image.py" est le code devant se trouver en main() sur l'esp32-cam.
+
 Les codes "reception_image.py" et "index.html" doivent sur trouver dans le même dossier sur le raspberry.
 Un mqtt doit évidemment être lancé sur le raspberry et les lignes de code concernant ce mqtt doivent être modifié en fonction du mqtt créé (Topic, user, ip,...)
 
