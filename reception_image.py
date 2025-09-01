@@ -4,19 +4,15 @@ from PIL import Image
 import io, time, base64, json
 from flask import Flask, render_template, send_from_directory
 
-# --- ParamÃ¨tres MQTT ---
 mqtt_broker = "172.20.10.3"
 mqtt_port = 1883
 mqtt_topic = "ProjetNichoir"
 
-# --- Dossier pour sauvegarder les images ---
 image_folder = "/home/Max/Documents/Photos"
 os.makedirs(image_folder, exist_ok=True)
 
-# --- Flask app ---
 app = Flask(__name__)
 
-# --- Variables ---
 connected_once = False
 
 
@@ -114,5 +110,3 @@ if __name__ == "__main__":
         
         client.loop_stop()
         client.disconnect()
-
-
