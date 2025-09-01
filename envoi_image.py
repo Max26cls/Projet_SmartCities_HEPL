@@ -9,7 +9,6 @@ import ubinascii
 import ujson
 from machine import wake_reason, TIMER_WAKE
 
-# --- Constantes ---
 LED = machine.Pin(4, machine.Pin.OUT)
 PIR = machine.Pin(2, machine.Pin.IN)
 
@@ -20,10 +19,8 @@ MQTT_BROKER = "172.20.10.3"
 MQTT_PORT = 1883
 TOPIC = "ProjetNichoir"
 
-# 24h en millisecondes (30s pour tests)
 WAKE_INTERVAL_MS = 30000      #24 * 60 * 60 * 1000 pour 24h
 
-# --- Fonctions utilitaires ---
 def get_battery_level():
     return random.randint(1, 100)       
 def connect_to_wifi():
@@ -85,7 +82,6 @@ def go_to_sleep():
     esp32.wake_on_ext0(pin=PIR, level=esp32.WAKEUP_ANY_HIGH)
     machine.deepsleep(WAKE_INTERVAL_MS)
 
-# --- Code principal ---
 def main():
     print("Reset cause:", wake_reason())
     sta_if = connect_to_wifi()
@@ -124,5 +120,6 @@ def main():
         time.sleep(0.5)
 
 main()
+
 
 
