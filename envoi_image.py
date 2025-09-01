@@ -21,12 +21,11 @@ MQTT_PORT = 1883
 TOPIC = "ProjetNichoir"
 
 # 24h en millisecondes (30s pour tests)
-WAKE_INTERVAL_MS = 30000 
+WAKE_INTERVAL_MS = 30000      #24 * 60 * 60 * 1000 pour 24h
 
 # --- Fonctions utilitaires ---
 def get_battery_level():
-    return random.randint(1, 100)
-
+    return random.randint(1, 100)       
 def connect_to_wifi():
     sta_if = network.WLAN(network.STA_IF)
     if not sta_if.isconnected():
@@ -119,10 +118,11 @@ def main():
                 print("Capture échouée")
             time.sleep(10)
         else:
-            if time.time() - last_motion_time > 15:
+            if time.time() - last_motion_time > 15:      #60:   pour 1minute pour projet final
                 disconnect_wifi(sta_if)
                 go_to_sleep()
         time.sleep(0.5)
 
 main()
+
 
